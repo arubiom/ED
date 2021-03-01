@@ -1,0 +1,13 @@
+Tipo test
+
+1) d - Es correcta
+    No nos importa el tipo de dentro pues nuestro iterador recorrerá el set, cuyo iterador si está en la STL.
+
+2) b - No hay ningún árbol con ese recorrido
+    Si suponemos que Z es el hijo izquierdo de A en el postorden W es el hijo izquierdo lo cual es imposible porque entonces no tendrían más descendientes.
+    Si suponemos que Z es el hijo derecho de A en el preorden W es descendiente de Z, que no lo es en el postorden.
+
+3) b - Dos correctas y una falsa
+    La primera es falsa porque el caso de los múltiplos de M daría problemas al no estar en [0,M-1].
+    La segunda es verdadera porque ninguno permite que haya más de un nivel de diferencia.
+    La tercera es verdadera porque los hijos izquierdos siempre aparecen a la izquierda del padre y viceversa para los derechos independientemente del orden en el que los recorramos.

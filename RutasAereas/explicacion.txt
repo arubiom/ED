@@ -1,0 +1,11 @@
+Autores: Sergio Blas Ríos, Alejandro Rubio Martínez
+
+Empezamos leyendo los PDF en los que venía explicado qué hacer. Tras un rato seguíamos sin saber por dónde empezar ya que hay mucho material. Tras eso comenzamos a implementar las clases Punto, Ruta y AlmacenRutas.
+
+La clase Punto era muy sencilla. Para la clase Ruta usamos un vector de la STL y un string para su código. Para la clase AlmacenRutas usamos List de la STL. Consideramos al principio el poner el código de las rutas en el almacén, y usar un Map para ello (con sus códigos como llaves). Decidimos cambiarlo porque el código de la ruta es algo inherente a ella y no parecía lógico separarlos.
+
+Seguimos con AlmacenRutas, que fue donde más errores tuvimos que arreglar ya que íbamos probando las cosas y las dos clases anteriores traían algún fallo. Principalmente tuvimos que arreglar iteradores, operadores, conflictos entre funciones constantes y otras que no lo eran, y constructores accidentalmente implementados dos veces. También estuvimos un rato con el makefile y los includes.
+
+Una vez hecho todo esto, procedimos a compilar y ejecutar el prgrama principal. Iba bien, pero por algún motivo al hacer el push_back en la list de Rutas, se perdía el código de estas. Tras una hora buscando en el código, el fallo estaba en el constructor de copia de Ruta. La cosa es, al cambiar de Map (nuestra idea original) a List, habíamos pasado por alto el añadir el copiar el código en este constructor, que usa push_back de List internamente para hacer su trabajo.
+
+Una vez resuelto esto, y finalizados los últimos retoques a los operadores de flujo, la práctica estaba terminada, pues compilaba y creaba los mapas de las rutas.
